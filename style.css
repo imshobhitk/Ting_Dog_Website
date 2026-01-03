@@ -1,72 +1,70 @@
+/* Gradient Background Animation */
 .gradient-background {
-    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
-    background-size: 180% 180%;
-    animation: gradient-animation 18s ease infinite;
-  }
-  
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  .icon-square {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 0.75rem;
-  }
-  
-  .profile-img {
-    height: 100px;
-    border-radius: 50%;
-  }
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
 
-  
-  .icon-link {
-    display: inline-flex;
-    gap: $icon-link-gap;
-    align-items: center;
-    text-decoration-color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, .5));
-    text-underline-offset: $icon-link-underline-offset;
-    backface-visibility: hidden;
-  
-    > .bi {
-      flex-shrink: 0;
-      width: $icon-link-icon-size;
-      height: $icon-link-icon-size;
-      fill: currentcolor;
-      @include transition($icon-link-icon-transition);
-    }
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .icon-link-hover {
-    &:hover,
-    &:focus-visible {
-      > .bi {
-        transform: var(--#{$prefix}icon-link-transform, $icon-link-icon-transform);
-      }
-    }
+  50% {
+    background-position: 100% 50%;
   }
-  
-.profile-image{
-  height:100px;
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Icon Square */
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+/* Profile Images */
+.profile-img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-image {
+  height: 100px;
   border-radius: 50%;
   margin-top: 47px;
   margin-bottom: 10px;
 }
 
-.button-3{
-  border-color:black;
+/* Icon Link (Fixed from SCSS to CSS) */
+.icon-link {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+  backface-visibility: hidden;
 }
 
-.button-3:hover{
+.icon-link > .bi {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon-link:hover > .bi,
+.icon-link:focus-visible > .bi {
+  transform: translateX(0.25rem);
+}
+
+/* Custom Button */
+.button-3 {
+  border-color: black;
+}
+
+.button-3:hover {
   background-color: black;
   color: white;
 }
-
